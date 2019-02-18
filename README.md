@@ -1,5 +1,6 @@
 # IFridge IOT Client
 
+## This project integrate with Face Recognition and Food Object Detection.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -7,11 +8,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Table of Contents
 
 - [IFridge IOT Client](#ifridge-iot-client)
+  - [This project integrate with Face Recognition and Food Object Detection.](#this-project-integrate-with-face-recognition-and-food-object-detection)
   - [Table of Contents](#table-of-contents)
   - [Available Scripts](#available-scripts)
     - [`npm start`](#npm-start)
     - [`npm test`](#npm-test)
     - [`npm run build`](#npm-run-build)
+    - [Todo](#todo)
 
 
 ## Available Scripts
@@ -41,3 +44,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
 
+### Todo
+
+- [x] Face Recognition
+- [x] V1 Project Structure
+- [X] Docker
+- [X] Food Object Detection
+- [ ] Redux
+- [ ] Testing
