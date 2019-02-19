@@ -32,7 +32,7 @@ class FaceDetect extends Component {
   }
 
   async componentDidMount() {
-    if (this.isFaceDetectionModelLoaded) {
+    if (!this.isFaceDetectionModelLoaded()) {
       await this.loadModels()
     }
 
