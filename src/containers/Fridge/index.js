@@ -9,12 +9,19 @@ class FridgeContainer extends Component {
     isFaceAuthentication: null,
     name: 'Unknown',
     userId: 0,
-    foods: []
+    foods: null,
   };
 
   handleFridgeSwitch = name => event => {
-    this.setState({ [name]: event.target.checked });
-    // TODO:: when turnoff, grab a snapshot
+    if (event.target.checked) {
+      this.handleAuthentication({
+        isFaceFound: false,
+        isFaceAuthentication: null,
+        name: 'Unknown',
+        userId: 0
+      })
+    }
+    this.setState({ [name]: event.target.checked })
   };
 
   handleAuthentication = (data) => {
@@ -24,7 +31,6 @@ class FridgeContainer extends Component {
   }
 
   handleDetectFoods = (foods) => {
-    console.log('handleFoods')
     this.setState({ foods })
   }
 

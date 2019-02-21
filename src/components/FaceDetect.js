@@ -50,7 +50,6 @@ class FaceDetect extends Component {
     try {
       await Promise.all([
         faceapi.loadTinyFaceDetectorModel(MODEL_FACE_URL),
-        faceapi.loadFaceDetectionModel(MODEL_FACE_URL),
         faceapi.loadFaceRecognitionModel(MODEL_FACE_URL)
       ]);
     } catch (error) {
@@ -154,24 +153,26 @@ class FaceDetect extends Component {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, isFaceAuthentication, fridgeSwitch } = this.props
 
     return (
       <div>
-        <p>Move your head slowly to complete the area</p>
         <div className={classes.FaceDetectBox}>
+          <p>Move your head slowly to complete the area</p>
           <WebCam
             ref={(webCam) => { this.webCamRef = webCam }}
             video="false"
             width="100%"
             height="100%"
-          />
+            />
+          {!isFaceAuthentication &&
           <canvas
             ref={(canvasWebCam) => { this.canvasWebCamRef = canvasWebCam }}
             width={300}
             height={300}
             className={classes.overlay}
           />
+          }
         </div>
         {/* extract box */}
         <div>

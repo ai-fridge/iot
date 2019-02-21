@@ -4,6 +4,7 @@ import {
   withStyles,
   List,
   ListSubheader,
+  CircularProgress,
 } from '@material-ui/core';
 import FridgeItem from './FridgeItem';
 
@@ -17,7 +18,10 @@ const styles = theme => ({
 
 const renderedItem = (foods) => {
   if (foods !== undefined && foods.length !== 0) {
-    foods.map(food => {
+    console.log('renderedItem not nul')
+    return foods
+    .filter(food => food.food_qty > 0)
+    .map(food => {
       return (
         <FridgeItem
           key={food.id}
@@ -36,7 +40,7 @@ const FridgeList = props => {
   return <List
     className={classes.root}
     subheader={<ListSubheader component="div">Inventory</ListSubheader>}>
-    {renderedItem(foods)}
+    {foods !== null ? renderedItem(foods) : <CircularProgress className={classes.progress} />}
   </List>;
 };
 
