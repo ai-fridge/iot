@@ -13,7 +13,7 @@ class FridgeContainer extends Component {
   };
 
   handleFridgeSwitch = name => event => {
-    if (event.target.checked) {
+    if (event.target.checked && this.state.userId !== 0) {
       this.handleAuthentication({
         isFaceFound: false,
         isFaceAuthentication: null,
